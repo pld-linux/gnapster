@@ -1,0 +1,12 @@
+--- gnapster-1.5.0/configure.in~	Mon Jun  4 11:02:01 2001
++++ gnapster-1.5.0/configure.in	Mon Jun 25 00:53:38 2001
+@@ -110,8 +110,8 @@
+ 
+ 
+-ALL_LINGUAS="`for i in po/??.po; do echo $i | cut -d"/" -f2 | cut -d"." -f1; done`"
+-AM_GNOME_GETTEXT
++ALL_LINGUAS="ca da de el es fi fr gl hu it ja nl no pl pt ru sv tr uk"
++AM_GNU_GETTEXT
+ 
+ dnl AC_LINK_FILES($nls_cv_header_libgt, $nls_cv_header_intl)
+ 
