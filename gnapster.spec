@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://jasta.gotlinux.org/files/%{name}-%{version}.tar.gz
+# Source0-md5:	f73e173c5dd78bb910dd8a5235c842a6
 Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
 URL:		http://jasta.gotlinux.org/gnapster.html
 BuildRequires:	ORBit-devel >= 0.4.0
