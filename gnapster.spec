@@ -7,7 +7,6 @@ Group:		Applications/Communications
 Group(pl):	Aplikacje/Komunikacja
 Source0:	http://www.gotlinux.org/~jasta/files/%{name}-%{version}.tar.gz
 URL:		http://www.gotlinux.org/~jasta/gnapster.html
-BuildRequires:	XFree86-devel
 BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	ORBit-devel >= 0.4.0
 BuildRequires:	gtk+-devel >= 1.2.0
