@@ -1,12 +1,12 @@
 Summary:	Gnapster is a simple gnome client that implement the napster protocol
 Name:		gnapster
-Version:	1.3.9
-Release:	2
+Version:	1.3.10
+Release:	1
 License:	GPL
 Group:		Applications/Communications
 Group(pl):	Aplikacje/Komunikacja
-Source0:	http://www.gotlinux.org/~jasta/files/%{name}-%{version}.tar.gz
-URL:		http://www.gotlinux.org/~jasta/gnapster.html
+Source0:	http://jasta.gotlinux.org/files/%{name}-%{version}.tar.gz
+URL:		http://jasta.gotlinux.org/gnapster.html
 BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	ORBit-devel >= 0.4.0
 BuildRequires:	gtk+-devel >= 1.2.0
