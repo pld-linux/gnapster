@@ -5,8 +5,6 @@ Version:	1.5.0
 Release:	1
 License:	GPL
 Group:		Applications/Communications
-Group(de):	Applikationen/Kommunikation
-Group(pl):	Aplikacje/Komunikacja
 Source0:	http://jasta.gotlinux.org/files/%{name}-%{version}.tar.gz
 Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
 URL:		http://jasta.gotlinux.org/gnapster.html
