@@ -42,7 +42,7 @@ rm -f po/essai.po
 %build
 rm -f missing
 %{__libtoolize}
-gettextize --copy --force
+%{__gettextize}
 aclocal -I macros
 %{__autoconf}
 %{__automake}
