@@ -2,7 +2,7 @@ Summary:	Gnapster is a simple gnome client that implement the napster protocol
 Summary(pl):	Gnapster jest prost± implementacj± protoko³y napster dla GNOME
 Name:		gnapster
 Version:	1.3.12
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
