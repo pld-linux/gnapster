@@ -31,7 +31,7 @@ contribute, please contact Jasta <jasta@gotlinux.org>.
 Gnapster jest ma³ym, lecz potê¿nym klientem protoko³u napstera (dla
 spo³eczno¶ci wymieniaj±cej siê plikami mp3), przepisanym dla GNOME
 przez Jasta. Je¶li chcecie pomóc w rozwoju tej aplikacji, mo¿na siê z
-nim skontaktowac pisz±c na adres: jasta@gotlinux.org.
+nim skontaktowaæ pisz±c na adres: jasta@gotlinux.org.
 
 %prep
 %setup -q
