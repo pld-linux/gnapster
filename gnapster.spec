@@ -1,20 +1,24 @@
 Summary:	Gnapster is a simple gnome client that implement the napster protocol
 Summary(pl):	Gnapster jest prost± implementacj± protoko³y napster dla GNOME
 Name:		gnapster
-Version:	1.4.2
+Version:	1.5.0
 Release:	1
 License:	GPL
 Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
 Group(pl):	Aplikacje/Komunikacja
 Source0:	http://jasta.gotlinux.org/files/%{name}-%{version}.tar.gz
+Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
 URL:		http://jasta.gotlinux.org/gnapster.html
-BuildRequires:	db3-devel
-BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	ORBit-devel >= 0.4.0
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	db3-devel
+BuildRequires:	esound-devel
+BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	gettext-devel
-BuildRequires:	esound-devel
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -33,9 +37,17 @@ nim skontaktowac pisz±c na adres: jasta@gotlinux.org.
 
 %prep
 %setup -q
+%patch -p1
+
+rm -f po/essai.po
 
 %build
+rm -f missing
+libtoolize --copy --force
 gettextize --copy --force
+aclocal -I macros
+autoconf
+automake -a -c
 %configure \
 %ifarch alpha
 	--without-xss
