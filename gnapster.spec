@@ -13,11 +13,10 @@ BuildRequires:	ORBit-devel >= 0.4.0
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	gettext-devel
 
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc/X11/GNOME
-%define		_applnkdir	%{_datadir}/applnk
 
 %description
 Gnapster is a small but powerfull client for the napster (mp3 comunity)
