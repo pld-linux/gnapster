@@ -43,7 +43,7 @@ rm -f po/essai.po
 rm -f missing
 %{__libtoolize}
 %{__gettextize}
-aclocal -I macros
+%{__aclocal} -I macros
 %{__autoconf}
 %{__automake}
 %configure \
