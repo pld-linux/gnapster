@@ -1,15 +1,15 @@
 Summary:	Gnapster is a simple gnome client that implement the napster protocol
 Summary(pl):	Gnapster jest prost± implementacj± protoko³y napster dla GNOME
 Name:		gnapster
-Version:	1.3.12
-Release:	2
+Version:	1.4.0
+Release:	1
 License:	GPL
 Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
 Group(pl):	Aplikacje/Komunikacja
 Source0:	http://jasta.gotlinux.org/files/%{name}-%{version}.tar.gz
 URL:		http://jasta.gotlinux.org/gnapster.html
-BuildRequires:	db2-devel
+BuildRequires:	db3-devel
 BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	ORBit-devel >= 0.4.0
 BuildRequires:	gtk+-devel >= 1.2.0
@@ -46,9 +46,11 @@ gettextize --copy --force
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Network/Misc
+install gnapster.desktop $RPM_BUILD_ROOT%{_applnkdir}/Network/Misc
+
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	Applicationsdir=%{_applnkdir}/Network/Misc
+	DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf AUTHORS ChangeLog NEWS README TODO
 
@@ -62,4 +64,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root) %{_bindir}/gnapster
 %{_datadir}/pixmaps/*
+%{_datadir}/gnapster
 %{_applnkdir}/Network/Misc
