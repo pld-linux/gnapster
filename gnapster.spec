@@ -1,4 +1,4 @@
-Summary:	Gnapster is a simple gnome client that implement the napster protocol
+Summary:	Gnapster is a simple GNOME client that implement the napster protocol
 Summary(pl):	Gnapster jest prost± implementacj± protoko³y napster dla GNOME
 Name:		gnapster
 Version:	1.5.0
@@ -24,12 +24,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Gnapster is a small but powerfull client for the napster (mp3
-comunity) protocol, written for Gnome by Jasta. If you would like to
+comunity) protocol, written for GNOME by Jasta. If you would like to
 contribute, please contact Jasta <jasta@gotlinux.org>.
 
 %description -l pl
 Gnapster jest ma³ym, lecz potê¿nym klientem protoko³u napstera (dla
-spo³eczno¶ci wymieniaj±cej siê plikami mp3), przepisanym dla Gnome
+spo³eczno¶ci wymieniaj±cej siê plikami mp3), przepisanym dla GNOME
 przez Jasta. Je¶li chcecie pomóc w rozwoju tej aplikacji, mo¿na siê z
 nim skontaktowac pisz±c na adres: jasta@gotlinux.org.
 
