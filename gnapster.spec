@@ -23,13 +23,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_sysconfdir	/etc/X11/GNOME
 
 %description
-Gnapster is a small but powerfull client for the napster (mp3
+Gnapster is a small but powerfull client for the napster (MP3
 comunity) protocol, written for GNOME by Jasta. If you would like to
 contribute, please contact Jasta <jasta@gotlinux.org>.
 
 %description -l pl
 Gnapster jest ma³ym, lecz potê¿nym klientem protoko³u napstera (dla
-spo³eczno¶ci wymieniaj±cej siê plikami mp3), przepisanym dla GNOME
+spo³eczno¶ci wymieniaj±cej siê plikami MP3), przepisanym dla GNOME
 przez Jasta. Je¶li chcecie pomóc w rozwoju tej aplikacji, mo¿na siê z
 nim skontaktowaæ pisz±c na adres: jasta@gotlinux.org.
 
