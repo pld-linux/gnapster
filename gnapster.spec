@@ -5,10 +5,11 @@ Version:	1.3.12
 Release:	1
 License:	GPL
 Group:		Applications/Communications
+Group(de):	Applikationen/Kommunikation
 Group(pl):	Aplikacje/Komunikacja
 Source0:	http://jasta.gotlinux.org/files/%{name}-%{version}.tar.gz
 URL:		http://jasta.gotlinux.org/gnapster.html
-BuildRequires:	glibc-db2-devel
+BuildRequires:	db2-devel
 BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	ORBit-devel >= 0.4.0
 BuildRequires:	gtk+-devel >= 1.2.0
@@ -35,7 +36,6 @@ nim skontaktowac pisz±c na adres: jasta@gotlinux.org.
 
 %build
 gettextize --copy --force
-LDFLAGS="-s"; export LDFLAGS
 %configure \
 %ifarch alpha
 	--without-xss
