@@ -1,7 +1,7 @@
 Summary:	Gnapster is a simple gnome client that implement the napster protocol
 Name:		gnapster
 Version:	1.3.9
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Communications
 Group(pl):	Aplikacje/Komunikacja
@@ -46,7 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 
 make install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	Applicationsdir=%{_applnkdir}/Applications
+	Applicationsdir=%{_applnkdir}/Network/Misc
 
 gzip -9nf AUTHORS ChangeLog NEWS README TODO
 
@@ -60,4 +60,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root) %{_bindir}/gnapster
 %{_datadir}/pixmaps/*
-%{_applnkdir}/Applications/*
+%{_applnkdir}/Network/Misc
