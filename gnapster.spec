@@ -1,70 +1,59 @@
-# Note that this is NOT a relocatable package
-# defaults for redhat
-%define prefix		/usr
-%define sysconfdir	/etc
-%define  RELEASE 1
-%define  rel     %{?CUSTOM_RELEASE} %{!?CUSTOM_RELEASE:%RELEASE}
+Summary:	Gnapster is a simple gnome client that implement the napster protocol.
+Name:		gnapster
+Version:	1.3.5
+Release:	1
+License:	GPL
+Group:		Applications/Communications
+Group(pl):	Aplikacje/Komunikacja
+Source:		http://www.gotlinux.org/~jasta/files/%{name}-%{version}.tar.gz
+Patch:		gnapster-applnk.patch
+URL:		http://www.gotlinux.org/~jasta/gnapster.html
+BuildRequires:	gnome-libs-devel >= 1.0.0
+BuildRequires:	ORBit-devel >= 0.4.0
+BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	gettext-devel
 
-Summary: Gnapster is a simple gnome client that implement the napster protocol.
-Name: @PACKAGE@
-Version: @VERSION@
-Release: %rel
-Copyright: GPL
-Group: Applications/Communications
-URL: http://www.gotlinux.org/~jasta/gnapster.html
-Source: http://www.gotlinux.org/~jasta/files/%{name}-%{version}.tar.gz
-Requires: gnome-libs >= 1.0.0
-Requires: ORBit >= 0.4.0
-Requires: gtk+ >= 1.2.0
-Packager: Jasta <jasta@gotlinux.org>
-BuildRoot: /var/tmp/%{name}-%{version}-root
+BuildRoot:	/tmp/%{name}-%{version}-root
+
+%define		_prefix		/usr/X11R6
+%define		_sysconfdir	/etc/X11/GNOME
+%define		_applnkdir	%{_datadir}/applnk
 
 %description
 Gnapster is a small but powerfull client for the napster (mp3 comunity)
-protocol, written for Gnome by Jasta. If you would like to contribute, 
+protocol, written for Gnome by Jasta. If you would like to contribute,
 please contact Jasta <jasta@gotlinux.org>.
 
 %prep
 %setup -q
-
-# seems as if xss support is broken on alpha :-(
-%ifarch alpha
-  ARCH_FLAGS="--host=alpha-redhat-linux --without-xss"
-%endif
-
-if [ ! -f configure ]; then
-  CFLAGS="$RPM_OPT_FLAGS" ./autogen.sh $ARCH_FLAGS --prefix=%{prefix} --sysconfdir=%{sysconfdir}
-else
-  CFLAGS="$RPM_OPT_FLAGS" ./configure $ARCH_FLAGS --prefix=%{prefix} --sysconfdir=%{sysconfdir}
-fi
+%patch -p1
 
 %build
+gettextize --copy --force
+automake
+LDFLAGS="-s"; export LDFLAGS
+%configure \
+%ifarch alpha
+	--without-xss
+%endif
 
-if [ "$SMP" != "" ]; then
-  make -j$SMP "MAKE=make -j$SMP"
-else
-  make
-fi
+make
 
 %install
-make prefix=$RPM_BUILD_ROOT%{prefix} sysconfdir=$RPM_BUILD_ROOT%{sysconfdir}  install-strip
+rm -rf $RPM_BUILD_ROOT
+
+make DESTDIR=$RPM_BUILD_ROOT install
+
+gzip -9nf AUTHORS ChangeLog NEWS README TODO
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
-%defattr(-,root,root)
-%doc AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
-%{sysconfdir}/CORBA/servers/Gnapster.gnorba
-%{prefix}/bin/gnapster
-%{prefix}/share/pixmaps/*
-%{prefix}/share/gnome/help/gnapster/*
-%{prefix}/share/locale/*/*/*
-
-###################################################################
-%changelog
-Revision 1.2  2000/02/13 13:54:35  kloczek
-- made the gnome archive from the standalone sources
-
-* Fri Jan 14 2000 Joaquim Fellmann <joaquim@hrnet.fr>
-- made the gnome archive from the standalone sources
+%files -f %{name}.lang
+%defattr(644,root,root,755)
+%doc *.gz
+%attr(755,root,root) %{_bindir}/gnapster
+%{_datadir}/pixmaps/*
+%{_applnkdir}/Applications/*
