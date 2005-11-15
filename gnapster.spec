@@ -5,10 +5,10 @@ Version:	1.5.0
 Release:	1
 License:	GPL
 Group:		Applications/Communications
-Source0:	http://jasta.gotlinux.org/files/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/gnapster/%{name}-%{version}.tar.gz
 # Source0-md5:	f73e173c5dd78bb910dd8a5235c842a6
 Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
-URL:		http://jasta.gotlinux.org/gnapster.html
+URL:		http://sourceforge.net/projects/gnapster/
 BuildRequires:	ORBit-devel >= 0.4.0
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -40,7 +40,6 @@ nim skontaktowaæ pisz±c na adres: jasta@gotlinux.org.
 rm -f po/essai.po
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__gettextize}
 %{__aclocal} -I macros
