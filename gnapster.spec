@@ -35,7 +35,7 @@ nim skontaktować pisząc na adres: jasta@gotlinux.org.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 rm -f po/essai.po
 
